@@ -1,281 +1,358 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Onboarding | Spike Barber</title>
+  <title>Sistema & CRM Spike Barber | Onboarding</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: '#D97706', // Ámbar / Dorado barbería elegante
-            darkbg: '#0F172A',
-            cardbg: '#1E293B',
-            bordercol: '#334155'
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
     input, select, textarea {
-      font-size: 16px !important; /* Evita zoom automático en iPhone */
+      font-size: 16px !important;
+    }
+    /* Estilo de checkbox y radios personalizados */
+    .custom-radio:checked {
+      border-color: #f59e0b;
+      background-color: #f59e0b;
     }
   </style>
 </head>
-<body class="bg-darkbg text-slate-100 min-h-screen font-sans pb-16 antialiased selection:bg-amber-500 selection:text-black">
+<body class="bg-[#0b0f19] text-white min-h-screen pb-20 antialiased selection:bg-amber-500 selection:text-black">
 
-  <!-- Header -->
-  <header class="border-b border-bordercol bg-cardbg/80 backdrop-blur sticky top-0 z-50 px-4 py-3 shadow-md">
+  <!-- Glow ambiental superior -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-40 bg-amber-500/10 blur-[90px] pointer-events-none -z-10"></div>
+
+  <!-- Header Superior -->
+  <header class="border-b border-slate-800 bg-[#0f172a]/90 backdrop-blur-md sticky top-0 z-50 px-4 py-3.5 shadow-xl">
     <div class="max-w-md mx-auto flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <span class="text-2xl">✂️</span>
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-500/20 text-xl">
+          ✂️
+        </div>
         <div>
-          <h1 class="font-bold text-lg leading-tight tracking-wide text-white">SPIKE BARBER</h1>
-          <p class="text-xs text-amber-500 font-medium">Levantamiento de Agenda & WhatsApp</p>
+          <div class="flex items-center space-x-2">
+            <h1 class="font-extrabold text-lg tracking-wider text-white">SPIKE BARBER</h1>
+            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded-full border border-emerald-500/30">ACTIVO</span>
+          </div>
+          <p class="text-xs text-amber-400 font-semibold tracking-wide">Sistema CRM & Gestión Integral</p>
         </div>
       </div>
-      <span class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2 py-1 rounded-full font-mono">2 Sillones</span>
+      <div class="text-right">
+        <span class="text-[11px] bg-slate-800 text-slate-300 border border-slate-700 font-semibold px-2.5 py-1 rounded-lg">
+          2 Sillones
+        </span>
+      </div>
     </div>
   </header>
 
-  <main class="max-w-md mx-auto px-4 mt-6">
+  <main class="max-w-md mx-auto px-4 mt-5 space-y-5">
 
-    <!-- Introducción -->
-    <div class="bg-cardbg border border-bordercol rounded-2xl p-4 mb-6 shadow-sm">
-      <p class="text-sm text-slate-300 leading-relaxed">
-        ¡Hola! Completa este breve formulario en <strong>3 minutos</strong> para dejar tu agenda y tus recordatorios de WhatsApp listos tal como opera tu local.
+    <!-- Tarjeta Destacada: Alcance del Sistema -->
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-[#162033] border border-amber-500/30 p-5 shadow-xl">
+      <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-amber-500/10 rounded-full blur-xl pointer-events-none"></div>
+      
+      <div class="flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        <span>Levantamiento de Requerimientos</span>
+      </div>
+      
+      <h2 class="text-base font-bold text-white mb-2 leading-snug">
+        Configuración de tu Sistema de Gestión & Agenda Inteligente
+      </h2>
+      <p class="text-xs text-slate-300 leading-relaxed font-normal">
+        No es solo un bot de WhatsApp: es la plataforma que centraliza tus citas, organiza a tus barberos y asegura que ningún cliente falte a su turno.
       </p>
+
+      <div class="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-slate-800/80 text-[11px] font-medium text-slate-300">
+        <div class="flex items-center space-x-1.5">
+          <span class="text-emerald-400 text-sm">✓</span>
+          <span>Agenda en Tiempo Real</span>
+        </div>
+        <div class="flex items-center space-x-1.5">
+          <span class="text-emerald-400 text-sm">✓</span>
+          <span>Control de 2 Sillones</span>
+        </div>
+        <div class="flex items-center space-x-1.5">
+          <span class="text-emerald-400 text-sm">✓</span>
+          <span>WhatsApp Automático</span>
+        </div>
+        <div class="flex items-center space-x-1.5">
+          <span class="text-emerald-400 text-sm">✓</span>
+          <span>Filtro Clientes de Calle</span>
+        </div>
+      </div>
     </div>
 
-    <form id="onboardingForm" class="space-y-6">
+    <!-- FORMULARIO -->
+    <form id="onboardingForm" class="space-y-5">
 
       <!-- BLOQUE 1 -->
-      <section class="bg-cardbg border border-bordercol rounded-2xl p-5 shadow-sm space-y-4">
-        <div class="flex items-center space-x-2 border-b border-bordercol/60 pb-3">
-          <span class="bg-amber-500/20 text-amber-400 p-1.5 rounded-lg text-sm">📍</span>
-          <h2 class="font-semibold text-white text-base">1. Datos del Negocio</h2>
+      <section class="bg-[#131c2e] border border-slate-800 rounded-2xl p-5 shadow-lg space-y-4">
+        <div class="flex items-center space-x-2.5 border-b border-slate-800 pb-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm font-bold">1</div>
+          <div>
+            <h2 class="font-bold text-white text-sm tracking-wide">Datos del Negocio y Administración</h2>
+            <p class="text-[11px] text-slate-400">Titularidad y ubicación física del local</p>
+          </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Nombre del Dueño *</label>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Nombre del Dueño *</label>
           <input type="text" name="duenoNombre" required placeholder="Tu nombre y apellido"
-            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+            class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 shadow-inner">
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Dirección y Ciudad *</label>
-          <input type="text" name="direccion" required placeholder="Ej: Av. Principal 123, Santiago"
-            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Dirección Física y Ciudad *</label>
+          <input type="text" name="direccion" required placeholder="Ej: Av. Principal 123, Local 4, Santiago"
+            class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 shadow-inner">
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Instagram de la Barbería</label>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Instagram Oficial de la Barbería</label>
           <input type="text" name="instagram" placeholder="@spikebarber"
-            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+            class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 shadow-inner">
         </div>
       </section>
 
       <!-- BLOQUE 2 -->
-      <section class="bg-cardbg border border-bordercol rounded-2xl p-5 shadow-sm space-y-4">
-        <div class="flex items-center space-x-2 border-b border-bordercol/60 pb-3">
-          <span class="bg-amber-500/20 text-amber-400 p-1.5 rounded-lg text-sm">⏰</span>
-          <h2 class="font-semibold text-white text-base">2. Barberos y Horarios</h2>
+      <section class="bg-[#131c2e] border border-slate-800 rounded-2xl p-5 shadow-lg space-y-4">
+        <div class="flex items-center space-x-2.5 border-b border-slate-800 pb-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm font-bold">2</div>
+          <div>
+            <h2 class="font-bold text-white text-sm tracking-wide">Capacidad, Barberos y Horarios (2 Sillones)</h2>
+            <p class="text-[11px] text-slate-400">Reglas operativas del salón</p>
+          </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Días de Atención *</label>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Días de Atención al Público *</label>
           <input type="text" name="diasAtencion" required placeholder="Ej: Martes a Sábado"
-            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+            class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 shadow-inner">
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Hora Apertura *</label>
+            <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Apertura *</label>
             <input type="time" name="horaApertura" required value="10:00"
-              class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-amber-500">
+              class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-3 py-3 text-white font-semibold focus:outline-none focus:border-amber-400 shadow-inner">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Hora Cierre *</label>
+            <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Cierre *</label>
             <input type="time" name="horaCierre" required value="20:00"
-              class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-amber-500">
+              class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-3 py-3 text-white font-semibold focus:outline-none focus:border-amber-400 shadow-inner">
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">¿Pausa de Almuerzo?</label>
-          <input type="text" name="pausaAlmuerzo" placeholder="Ej: No, corrido / o Sí, de 14:00 a 15:00"
-            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿Pausa para Almuerzo / Colación?</label>
+          <input type="text" name="pausaAlmuerzo" placeholder="Ej: Horario corrido sin pausa / o De 14:00 a 15:00"
+            class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 shadow-inner">
         </div>
 
-        <div class="pt-2 border-t border-bordercol/40">
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Nombre del Segundo Barbero *</label>
+        <div class="pt-3 border-t border-slate-800">
+          <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">Nombre del Segundo Barbero (Sillón 2) *</label>
           <input type="text" name="segundoBarbero" required placeholder="Nombre del colega barbero"
-            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+            class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 shadow-inner">
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿El cliente puede elegir barbero?</label>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer hover:border-amber-500/50">
-              <input type="radio" name="eleccionBarbero" value="libre" checked class="text-amber-500 focus:ring-amber-500">
-              <span>Sí, puede elegir contigo o con tu colega</span>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿El cliente puede elegir con quién cortarse?</label>
+          <div class="space-y-2.5 text-xs">
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
+              <input type="radio" name="eleccionBarbero" value="libre" checked class="w-4 h-4 text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium leading-relaxed">Sí, el cliente elige: contigo (dueño) o con tu colega</span>
             </label>
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer hover:border-amber-500/50">
-              <input type="radio" name="eleccionBarbero" value="asignado" class="text-amber-500 focus:ring-amber-500">
-              <span>No, se asigna al primero que esté disponible</span>
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
+              <input type="radio" name="eleccionBarbero" value="asignado" class="w-4 h-4 text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium leading-relaxed">No, se asigna al primer barbero con espacio libre</span>
             </label>
           </div>
         </div>
 
-        <div class="pt-2 border-t border-bordercol/40">
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿Cómo manejas clientes que entran de la calle (sin cita)?</label>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer hover:border-amber-500/50">
-              <input type="radio" name="manejoWalkin" value="solo_si_hay_hueco" checked class="text-amber-500 focus:ring-amber-500">
-              <span>Solo si hay espacio libre (la cita agendada manda)</span>
+        <div class="pt-3 border-t border-slate-800">
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿Cómo manejas clientes que llegan de la calle (sin cita previa)?</label>
+          <div class="space-y-2.5 text-xs">
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
+              <input type="radio" name="manejoWalkin" value="solo_si_hay_hueco" checked class="w-4 h-4 text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium leading-relaxed">Solo si justo hay hueco libre (la cita agendada siempre tiene prioridad)</span>
             </label>
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer hover:border-amber-500/50">
-              <input type="radio" name="manejoWalkin" value="orden_llegada" class="text-amber-500 focus:ring-amber-500">
-              <span>Por orden de llegada</span>
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
+              <input type="radio" name="manejoWalkin" value="orden_llegada" class="w-4 h-4 text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium leading-relaxed">Por orden de llegada al local</span>
             </label>
           </div>
         </div>
       </section>
 
       <!-- BLOQUE 3 -->
-      <section class="bg-cardbg border border-bordercol rounded-2xl p-5 shadow-sm space-y-4">
-        <div class="flex items-center space-x-2 border-b border-bordercol/60 pb-3">
-          <span class="bg-amber-500/20 text-amber-400 p-1.5 rounded-lg text-sm">💈</span>
-          <h2 class="font-semibold text-white text-base">3. Servicios y Precios</h2>
-        </div>
-
-        <p class="text-xs text-slate-400">Indica tiempo aproximado en minutos y precio de cada servicio:</p>
-
-        <!-- Corte -->
-        <div class="bg-slate-900/70 p-3 rounded-xl border border-bordercol space-y-2">
-          <span class="font-medium text-sm text-white block">Corte Clásico / Fade</span>
-          <div class="grid grid-cols-2 gap-2">
-            <input type="text" name="tiempoCorte" placeholder="Minutos (ej: 40)" value="40 min" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white">
-            <input type="text" name="precioCorte" placeholder="Precio (ej: $12.000)" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white" required>
+      <section class="bg-[#131c2e] border border-slate-800 rounded-2xl p-5 shadow-lg space-y-4">
+        <div class="flex items-center space-x-2.5 border-b border-slate-800 pb-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm font-bold">3</div>
+          <div>
+            <h2 class="font-bold text-white text-sm tracking-wide">Catálogo de Servicios y Precios</h2>
+            <p class="text-[11px] text-slate-400">Duración y valor para el cálculo de turnos</p>
           </div>
         </div>
 
-        <!-- Barba -->
-        <div class="bg-slate-900/70 p-3 rounded-xl border border-bordercol space-y-2">
-          <span class="font-medium text-sm text-white block">Perfilado de Barba</span>
+        <!-- Servicio 1 -->
+        <div class="bg-[#0a0f1d] p-3.5 rounded-xl border border-slate-700 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-xs text-amber-400 uppercase tracking-wide">Corte Clásico / Degradé (Fade)</span>
+            <span class="text-[10px] text-slate-400">Servicio #1</span>
+          </div>
           <div class="grid grid-cols-2 gap-2">
-            <input type="text" name="tiempoBarba" placeholder="Minutos (ej: 25)" value="25 min" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white">
-            <input type="text" name="precioBarba" placeholder="Precio (ej: $8.000)" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white" required>
+            <div>
+              <span class="text-[10px] font-semibold text-slate-400 block mb-1">Duración</span>
+              <input type="text" name="tiempoCorte" value="40 min" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white font-medium">
+            </div>
+            <div>
+              <span class="text-[10px] font-semibold text-slate-400 block mb-1">Precio *</span>
+              <input type="text" name="precioCorte" placeholder="Ej: $12.000" required class="w-full bg-slate-900 border border-amber-500/40 rounded-lg px-3 py-2 text-xs text-white font-bold placeholder-slate-500">
+            </div>
           </div>
         </div>
 
-        <!-- Combo -->
-        <div class="bg-slate-900/70 p-3 rounded-xl border border-bordercol space-y-2">
-          <span class="font-medium text-sm text-white block">Combo: Corte + Barba</span>
+        <!-- Servicio 2 -->
+        <div class="bg-[#0a0f1d] p-3.5 rounded-xl border border-slate-700 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-xs text-amber-400 uppercase tracking-wide">Perfilado / Arreglo de Barba</span>
+            <span class="text-[10px] text-slate-400">Servicio #2</span>
+          </div>
           <div class="grid grid-cols-2 gap-2">
-            <input type="text" name="tiempoCombo" placeholder="Minutos (ej: 60)" value="60 min" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white">
-            <input type="text" name="precioCombo" placeholder="Precio (ej: $18.000)" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white" required>
+            <div>
+              <span class="text-[10px] font-semibold text-slate-400 block mb-1">Duración</span>
+              <input type="text" name="tiempoBarba" value="25 min" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white font-medium">
+            </div>
+            <div>
+              <span class="text-[10px] font-semibold text-slate-400 block mb-1">Precio *</span>
+              <input type="text" name="precioBarba" placeholder="Ej: $8.000" required class="w-full bg-slate-900 border border-amber-500/40 rounded-lg px-3 py-2 text-xs text-white font-bold placeholder-slate-500">
+            </div>
           </div>
         </div>
 
-        <!-- Otros -->
+        <!-- Servicio 3 -->
+        <div class="bg-[#0a0f1d] p-3.5 rounded-xl border border-slate-700 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-xs text-amber-400 uppercase tracking-wide">Combo: Corte + Barba Completo</span>
+            <span class="text-[10px] text-slate-400">Servicio #3</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <span class="text-[10px] font-semibold text-slate-400 block mb-1">Duración</span>
+              <input type="text" name="tiempoCombo" value="60 min" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white font-medium">
+            </div>
+            <div>
+              <span class="text-[10px] font-semibold text-slate-400 block mb-1">Precio *</span>
+              <input type="text" name="precioCombo" placeholder="Ej: $18.000" required class="w-full bg-slate-900 border border-amber-500/40 rounded-lg px-3 py-2 text-xs text-white font-bold placeholder-slate-500">
+            </div>
+          </div>
+        </div>
+
+        <!-- Otros servicios -->
         <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Otros Servicios Adicionales</label>
-          <textarea name="otrosServicios" rows="2" placeholder="Ej: Cejas $3.000 (10 min), Color $25.000 (90 min)..."
-            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Otros Servicios (Cejas, Color, Platinado, etc.)</label>
+          <textarea name="otrosServicios" rows="2" placeholder="Ej: Cejas $3.000 (10 min), Platinado $30.000 (90 min)..."
+            class="w-full bg-[#0a0f1d] border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 shadow-inner"></textarea>
         </div>
 
-        <div class="pt-2 border-t border-bordercol/40">
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿Margen entre turnos para limpiar/preparar?</label>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
-              <input type="radio" name="margenTurnos" value="5min" checked class="text-amber-500">
-              <span>Sí, 5 a 10 minutos de respiro</span>
+        <div class="pt-3 border-t border-slate-800">
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿Dejamos un margen entre turnos para limpiar herramientas?</label>
+          <div class="space-y-2.5 text-xs">
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer">
+              <input type="radio" name="margenTurnos" value="5min" checked class="w-4 h-4 text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium">Sí, 5 a 10 minutos de respiro entre clientes</span>
             </label>
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
-              <input type="radio" name="margenTurnos" value="0min" class="text-amber-500">
-              <span>No, turnos pegados uno tras otro</span>
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer">
+              <input type="radio" name="margenTurnos" value="0min" class="w-4 h-4 text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium">No, turnos continuos sin pausa</span>
             </label>
           </div>
         </div>
       </section>
 
       <!-- BLOQUE 4 -->
-      <section class="bg-cardbg border border-bordercol rounded-2xl p-5 shadow-sm space-y-4">
-        <div class="flex items-center space-x-2 border-b border-bordercol/60 pb-3">
-          <span class="bg-amber-500/20 text-amber-400 p-1.5 rounded-lg text-sm">📲</span>
-          <h2 class="font-semibold text-white text-base">4. Reservas y WhatsApp</h2>
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿Pides Pago Anticipado para asegurar el turno?</label>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
-              <input type="radio" name="pagoAnticipado" value="no" checked class="text-amber-500" onclick="document.getElementById('datosPagoBox').classList.add('hidden')">
-              <span>No, pagan el 100% en el local al terminar</span>
-            </label>
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
-              <input type="radio" name="pagoAnticipado" value="si" class="text-amber-500" onclick="document.getElementById('datosPagoBox').classList.remove('hidden')">
-              <span>Sí, pedimos abono previo para reservar</span>
-            </label>
-          </div>
-        </div>
-
-        <div id="datosPagoBox" class="hidden bg-slate-900/80 p-3 rounded-xl border border-amber-500/30 space-y-2">
-          <label class="block text-xs text-amber-400 font-medium">¿Cuánto de abono y datos de cuenta para transferir?</label>
-          <textarea name="datosCuenta" rows="2" placeholder="Ej: $5.000 / Banco Estado, Cuenta RUT..."
-            class="w-full bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-amber-500"></textarea>
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Recordatorios por WhatsApp al cliente:</label>
-          <div class="space-y-2 text-sm">
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
-              <input type="checkbox" name="rec24h" checked class="rounded text-amber-500 focus:ring-amber-500">
-              <span>Recordar 24 horas antes</span>
-            </label>
-            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
-              <input type="checkbox" name="rec2h" checked class="rounded text-amber-500 focus:ring-amber-500">
-              <span>Recordar 2 horas antes de la cita</span>
-            </label>
+      <section class="bg-[#131c2e] border border-slate-800 rounded-2xl p-5 shadow-lg space-y-4">
+        <div class="flex items-center space-x-2.5 border-b border-slate-800 pb-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm font-bold">4</div>
+          <div>
+            <h2 class="font-bold text-white text-sm tracking-wide">Reglas de Reserva, Pagos y WhatsApp</h2>
+            <p class="text-[11px] text-slate-400">Automatizaciones para reducir ausentismo</p>
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Aviso de cancelación (mínimo de anticipación)</label>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿Pides Pago Anticipado para asegurar el turno?</label>
+          <div class="space-y-2.5 text-xs">
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer">
+              <input type="radio" name="pagoAnticipado" value="no" checked class="w-4 h-4 text-amber-500 accent-amber-500" onclick="document.getElementById('datosPagoBox').classList.add('hidden')">
+              <span class="text-slate-200 font-medium">No, pagan el 100% en el local al terminar el corte</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer">
+              <input type="radio" name="pagoAnticipado" value="si" class="w-4 h-4 text-amber-500 accent-amber-500" onclick="document.getElementById('datosPagoBox').classList.remove('hidden')">
+              <span class="text-slate-200 font-medium">Sí, pedimos abono previo por transferencia para congelar la hora</span>
+            </label>
+          </div>
+        </div>
+
+        <div id="datosPagoBox" class="hidden bg-[#0a0f1d] p-3.5 rounded-xl border border-amber-500/40 space-y-2">
+          <label class="block text-xs text-amber-400 font-bold">Monto del abono y datos de cuenta:</label>
+          <textarea name="datosCuenta" rows="2" placeholder="Ej: $5.000 de abono / Banco Estado, Cuenta RUT 12345678-9, a nombre de..."
+            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Recordatorios Automáticos por WhatsApp:</label>
+          <div class="space-y-2.5 text-xs">
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer">
+              <input type="checkbox" name="rec24h" checked class="w-4 h-4 rounded text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium">Recordar 24 horas antes de la cita</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer">
+              <input type="checkbox" name="rec2h" checked class="w-4 h-4 rounded text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium">Recordar 2 horas antes de la cita</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">Aviso de cancelación (mínimo de anticipación)</label>
           <input type="text" name="tiempoCancelacion" value="2 horas antes"
-            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:border-amber-400 shadow-inner">
         </div>
       </section>
 
-      <!-- BOTÓN DE ENVÍO -->
-      <div class="pt-2">
+      <!-- BOTÓN DE ACCIÓN FINAL -->
+      <div class="pt-3 pb-6">
         <button type="submit" id="submitBtn"
-          class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/20 active:scale-[0.98] transition flex items-center justify-center space-x-2 text-base">
+          class="w-full bg-gradient-to-r from-amber-500 via-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold py-4 px-6 rounded-2xl shadow-xl shadow-amber-500/25 active:scale-[0.98] transition flex items-center justify-center space-x-3 text-base tracking-wide border border-amber-400/30">
           <span>Finalizar y Enviar Logo por WhatsApp</span>
-          <span>📲</span>
+          <span class="text-xl">📲</span>
         </button>
-        <p class="text-center text-xs text-slate-500 mt-2">Tus datos se guardan y te abrirá WhatsApp para adjuntar tu logo.</p>
+        <p class="text-center text-[11px] text-slate-400 mt-2.5 font-medium">
+          Al pulsar, se guardará la configuración y se abrirá WhatsApp para adjuntar tu logo.
+        </p>
       </div>
 
     </form>
 
-    <!-- Modal de éxito -->
-    <div id="successModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div class="bg-cardbg border border-amber-500/40 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl">
-        <div class="w-16 h-16 bg-amber-500/20 text-amber-400 text-3xl rounded-full flex items-center justify-center mx-auto">
+    <!-- Modal de confirmación -->
+    <div id="successModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+      <div class="bg-[#131c2e] border border-amber-500/50 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl">
+        <div class="w-16 h-16 bg-amber-500/20 text-amber-400 text-3xl rounded-full flex items-center justify-center mx-auto border border-amber-500/30">
           ✓
         </div>
-        <h3 class="text-xl font-bold text-white">¡Datos Recibidos!</h3>
-        <p class="text-sm text-slate-300">
-          Ahora solo abre WhatsApp para enviarnos tu <strong>Logo</strong> y 3 capturas de cómo te piden turnos hoy.
+        <h3 class="text-lg font-bold text-white">¡Configuración Guardada!</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-normal">
+          Tus datos se registraron con éxito. Ahora solo abre WhatsApp para enviarnos tu <strong>Logo</strong> y 3 capturas de cómo agendan tus clientes hoy.
         </p>
         <a id="waRedirectBtn" href="#"
-          class="block w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition">
+          class="block w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition text-sm">
           Abrir WhatsApp Ahora 💬
         </a>
       </div>
@@ -292,7 +369,7 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
-      submitBtn.innerText = 'Guardando información...';
+      submitBtn.innerHTML = '<span>Guardando configuración...</span>';
 
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
@@ -310,7 +387,7 @@
 
         // Enlace WhatsApp con mensaje precargado
         const waPhone = '56974918866';
-        const msg = encodeURIComponent(`¡Hola! Ya completé el formulario de Spike Barber (Dueño: ${data.duenoNombre}). A continuación te adjunto el logo de la barbería y las capturas.`);
+        const msg = encodeURIComponent(`¡Hola! Ya completé la configuración inicial de Spike Barber (Dueño: ${data.duenoNombre}). A continuación te adjunto el logo y las capturas.`);
         const waUrl = `https://wa.me/${waPhone}?text=${msg}`;
 
         waBtn.href = waUrl;
@@ -324,7 +401,7 @@
       } catch (err) {
         alert('Hubo un error al guardar los datos. Por favor inténtalo de nuevo.');
         submitBtn.disabled = false;
-        submitBtn.innerText = 'Finalizar y Enviar Logo por WhatsApp 📲';
+        submitBtn.innerHTML = '<span>Finalizar y Enviar Logo por WhatsApp</span><span class="text-xl">📲</span>';
       }
     });
   </script>
