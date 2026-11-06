@@ -155,32 +155,46 @@
             class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 shadow-inner">
         </div>
 
-        <div class="pt-3 border-t border-slate-800">
-          <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">Nombre del Segundo Barbero (Sillón 2) *</label>
-          <input type="text" name="segundoBarbero" required placeholder="Nombre del colega barbero"
-            class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-4 py-3 text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 shadow-inner">
+        <div class="pt-3 border-t border-slate-800 space-y-2">
+          <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">Nombre de los Barberos (2 Sillones) *</label>
+          <div class="grid grid-cols-2 gap-2.5">
+            <div>
+              <span class="text-xs font-semibold text-slate-300 block mb-1">Sillón 1 (Dueño) *</span>
+              <input type="text" name="barbero1" required placeholder="Tu nombre"
+                class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-3 py-2.5 text-xs text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 shadow-inner">
+            </div>
+            <div>
+              <span class="text-xs font-semibold text-slate-300 block mb-1">Sillón 2 (Colega) *</span>
+              <input type="text" name="barbero2" required placeholder="Nombre colega"
+                class="w-full bg-[#0a0f1d] border border-slate-700/80 rounded-xl px-3 py-2.5 text-xs text-white font-medium placeholder-slate-500 focus:outline-none focus:border-amber-400 shadow-inner">
+            </div>
+          </div>
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿El cliente puede elegir con quién cortarse?</label>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿Cómo se reparten las citas entre ambos barberos?</label>
           <div class="space-y-2.5 text-xs">
             <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
               <input type="radio" name="eleccionBarbero" value="libre" checked class="w-4 h-4 text-amber-500 accent-amber-500">
-              <span class="text-slate-200 font-medium leading-relaxed">Sí, el cliente elige: contigo (dueño) o con tu colega</span>
+              <span class="text-slate-200 font-medium leading-relaxed">El cliente siempre elige con quién atenderse (ambos tienen su clientela)</span>
+            </label>
+            <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
+              <input type="radio" name="eleccionBarbero" value="dueno_fijos" class="w-4 h-4 text-amber-500 accent-amber-500">
+              <span class="text-slate-200 font-medium leading-relaxed">Yo (dueño) atiendo a mis clientes fijos, y el segundo barbero atiende a nuevos o por disponibilidad</span>
             </label>
             <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
               <input type="radio" name="eleccionBarbero" value="asignado" class="w-4 h-4 text-amber-500 accent-amber-500">
-              <span class="text-slate-200 font-medium leading-relaxed">No, se asigna al primer barbero con espacio libre</span>
+              <span class="text-slate-200 font-medium leading-relaxed">Se asigna automáticamente al que tenga espacio libre primero</span>
             </label>
           </div>
         </div>
 
         <div class="pt-3 border-t border-slate-800">
-          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿Cómo manejas clientes que llegan de la calle (sin cita previa)?</label>
+          <label class="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">¿Cómo manejas a los clientes que llegan sin cita previa?</label>
           <div class="space-y-2.5 text-xs">
             <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
               <input type="radio" name="manejoWalkin" value="solo_si_hay_hueco" checked class="w-4 h-4 text-amber-500 accent-amber-500">
-              <span class="text-slate-200 font-medium leading-relaxed">Solo si justo hay hueco libre (la cita agendada siempre tiene prioridad)</span>
+              <span class="text-slate-200 font-medium leading-relaxed">Solo si justo hay un espacio libre (la cita agendada siempre tiene prioridad)</span>
             </label>
             <label class="flex items-center space-x-3 p-3 rounded-xl bg-[#0a0f1d] border border-slate-700 cursor-pointer hover:border-amber-400 transition">
               <input type="radio" name="manejoWalkin" value="orden_llegada" class="w-4 h-4 text-amber-500 accent-amber-500">
