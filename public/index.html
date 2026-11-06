@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Onboarding | Spike Barber</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#D97706', // Ámbar / Dorado barbería elegante
+            darkbg: '#0F172A',
+            cardbg: '#1E293B',
+            bordercol: '#334155'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    input, select, textarea {
+      font-size: 16px !important; /* Evita zoom automático en iPhone */
+    }
+  </style>
+</head>
+<body class="bg-darkbg text-slate-100 min-h-screen font-sans pb-16 antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- Header -->
+  <header class="border-b border-bordercol bg-cardbg/80 backdrop-blur sticky top-0 z-50 px-4 py-3 shadow-md">
+    <div class="max-w-md mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">✂️</span>
+        <div>
+          <h1 class="font-bold text-lg leading-tight tracking-wide text-white">SPIKE BARBER</h1>
+          <p class="text-xs text-amber-500 font-medium">Levantamiento de Agenda & WhatsApp</p>
+        </div>
+      </div>
+      <span class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2 py-1 rounded-full font-mono">2 Sillones</span>
+    </div>
+  </header>
+
+  <main class="max-w-md mx-auto px-4 mt-6">
+
+    <!-- Introducción -->
+    <div class="bg-cardbg border border-bordercol rounded-2xl p-4 mb-6 shadow-sm">
+      <p class="text-sm text-slate-300 leading-relaxed">
+        ¡Hola! Completa este breve formulario en <strong>3 minutos</strong> para dejar tu agenda y tus recordatorios de WhatsApp listos tal como opera tu local.
+      </p>
+    </div>
+
+    <form id="onboardingForm" class="space-y-6">
+
+      <!-- BLOQUE 1 -->
+      <section class="bg-cardbg border border-bordercol rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center space-x-2 border-b border-bordercol/60 pb-3">
+          <span class="bg-amber-500/20 text-amber-400 p-1.5 rounded-lg text-sm">📍</span>
+          <h2 class="font-semibold text-white text-base">1. Datos del Negocio</h2>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Nombre del Dueño *</label>
+          <input type="text" name="duenoNombre" required placeholder="Tu nombre y apellido"
+            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Dirección y Ciudad *</label>
+          <input type="text" name="direccion" required placeholder="Ej: Av. Principal 123, Santiago"
+            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Instagram de la Barbería</label>
+          <input type="text" name="instagram" placeholder="@spikebarber"
+            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+        </div>
+      </section>
+
+      <!-- BLOQUE 2 -->
+      <section class="bg-cardbg border border-bordercol rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center space-x-2 border-b border-bordercol/60 pb-3">
+          <span class="bg-amber-500/20 text-amber-400 p-1.5 rounded-lg text-sm">⏰</span>
+          <h2 class="font-semibold text-white text-base">2. Barberos y Horarios</h2>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Días de Atención *</label>
+          <input type="text" name="diasAtencion" required placeholder="Ej: Martes a Sábado"
+            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Hora Apertura *</label>
+            <input type="time" name="horaApertura" required value="10:00"
+              class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-amber-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Hora Cierre *</label>
+            <input type="time" name="horaCierre" required value="20:00"
+              class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-amber-500">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">¿Pausa de Almuerzo?</label>
+          <input type="text" name="pausaAlmuerzo" placeholder="Ej: No, corrido / o Sí, de 14:00 a 15:00"
+            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+        </div>
+
+        <div class="pt-2 border-t border-bordercol/40">
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Nombre del Segundo Barbero *</label>
+          <input type="text" name="segundoBarbero" required placeholder="Nombre del colega barbero"
+            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿El cliente puede elegir barbero?</label>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer hover:border-amber-500/50">
+              <input type="radio" name="eleccionBarbero" value="libre" checked class="text-amber-500 focus:ring-amber-500">
+              <span>Sí, puede elegir contigo o con tu colega</span>
+            </label>
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer hover:border-amber-500/50">
+              <input type="radio" name="eleccionBarbero" value="asignado" class="text-amber-500 focus:ring-amber-500">
+              <span>No, se asigna al primero que esté disponible</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-bordercol/40">
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿Cómo manejas clientes que entran de la calle (sin cita)?</label>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer hover:border-amber-500/50">
+              <input type="radio" name="manejoWalkin" value="solo_si_hay_hueco" checked class="text-amber-500 focus:ring-amber-500">
+              <span>Solo si hay espacio libre (la cita agendada manda)</span>
+            </label>
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer hover:border-amber-500/50">
+              <input type="radio" name="manejoWalkin" value="orden_llegada" class="text-amber-500 focus:ring-amber-500">
+              <span>Por orden de llegada</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 3 -->
+      <section class="bg-cardbg border border-bordercol rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center space-x-2 border-b border-bordercol/60 pb-3">
+          <span class="bg-amber-500/20 text-amber-400 p-1.5 rounded-lg text-sm">💈</span>
+          <h2 class="font-semibold text-white text-base">3. Servicios y Precios</h2>
+        </div>
+
+        <p class="text-xs text-slate-400">Indica tiempo aproximado en minutos y precio de cada servicio:</p>
+
+        <!-- Corte -->
+        <div class="bg-slate-900/70 p-3 rounded-xl border border-bordercol space-y-2">
+          <span class="font-medium text-sm text-white block">Corte Clásico / Fade</span>
+          <div class="grid grid-cols-2 gap-2">
+            <input type="text" name="tiempoCorte" placeholder="Minutos (ej: 40)" value="40 min" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white">
+            <input type="text" name="precioCorte" placeholder="Precio (ej: $12.000)" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white" required>
+          </div>
+        </div>
+
+        <!-- Barba -->
+        <div class="bg-slate-900/70 p-3 rounded-xl border border-bordercol space-y-2">
+          <span class="font-medium text-sm text-white block">Perfilado de Barba</span>
+          <div class="grid grid-cols-2 gap-2">
+            <input type="text" name="tiempoBarba" placeholder="Minutos (ej: 25)" value="25 min" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white">
+            <input type="text" name="precioBarba" placeholder="Precio (ej: $8.000)" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white" required>
+          </div>
+        </div>
+
+        <!-- Combo -->
+        <div class="bg-slate-900/70 p-3 rounded-xl border border-bordercol space-y-2">
+          <span class="font-medium text-sm text-white block">Combo: Corte + Barba</span>
+          <div class="grid grid-cols-2 gap-2">
+            <input type="text" name="tiempoCombo" placeholder="Minutos (ej: 60)" value="60 min" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white">
+            <input type="text" name="precioCombo" placeholder="Precio (ej: $18.000)" class="bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white" required>
+          </div>
+        </div>
+
+        <!-- Otros -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Otros Servicios Adicionales</label>
+          <textarea name="otrosServicios" rows="2" placeholder="Ej: Cejas $3.000 (10 min), Color $25.000 (90 min)..."
+            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+
+        <div class="pt-2 border-t border-bordercol/40">
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿Margen entre turnos para limpiar/preparar?</label>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
+              <input type="radio" name="margenTurnos" value="5min" checked class="text-amber-500">
+              <span>Sí, 5 a 10 minutos de respiro</span>
+            </label>
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
+              <input type="radio" name="margenTurnos" value="0min" class="text-amber-500">
+              <span>No, turnos pegados uno tras otro</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 4 -->
+      <section class="bg-cardbg border border-bordercol rounded-2xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center space-x-2 border-b border-bordercol/60 pb-3">
+          <span class="bg-amber-500/20 text-amber-400 p-1.5 rounded-lg text-sm">📲</span>
+          <h2 class="font-semibold text-white text-base">4. Reservas y WhatsApp</h2>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">¿Pides Pago Anticipado para asegurar el turno?</label>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
+              <input type="radio" name="pagoAnticipado" value="no" checked class="text-amber-500" onclick="document.getElementById('datosPagoBox').classList.add('hidden')">
+              <span>No, pagan el 100% en el local al terminar</span>
+            </label>
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
+              <input type="radio" name="pagoAnticipado" value="si" class="text-amber-500" onclick="document.getElementById('datosPagoBox').classList.remove('hidden')">
+              <span>Sí, pedimos abono previo para reservar</span>
+            </label>
+          </div>
+        </div>
+
+        <div id="datosPagoBox" class="hidden bg-slate-900/80 p-3 rounded-xl border border-amber-500/30 space-y-2">
+          <label class="block text-xs text-amber-400 font-medium">¿Cuánto de abono y datos de cuenta para transferir?</label>
+          <textarea name="datosCuenta" rows="2" placeholder="Ej: $5.000 / Banco Estado, Cuenta RUT..."
+            class="w-full bg-slate-800 border border-bordercol rounded-lg px-2.5 py-2 text-xs text-white focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Recordatorios por WhatsApp al cliente:</label>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
+              <input type="checkbox" name="rec24h" checked class="rounded text-amber-500 focus:ring-amber-500">
+              <span>Recordar 24 horas antes</span>
+            </label>
+            <label class="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-900/60 border border-bordercol cursor-pointer">
+              <input type="checkbox" name="rec2h" checked class="rounded text-amber-500 focus:ring-amber-500">
+              <span>Recordar 2 horas antes de la cita</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Aviso de cancelación (mínimo de anticipación)</label>
+          <input type="text" name="tiempoCancelacion" value="2 horas antes"
+            class="w-full bg-slate-900 border border-bordercol rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+        </div>
+      </section>
+
+      <!-- BOTÓN DE ENVÍO -->
+      <div class="pt-2">
+        <button type="submit" id="submitBtn"
+          class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/20 active:scale-[0.98] transition flex items-center justify-center space-x-2 text-base">
+          <span>Finalizar y Enviar Logo por WhatsApp</span>
+          <span>📲</span>
+        </button>
+        <p class="text-center text-xs text-slate-500 mt-2">Tus datos se guardan y te abrirá WhatsApp para adjuntar tu logo.</p>
+      </div>
+
+    </form>
+
+    <!-- Modal de éxito -->
+    <div id="successModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+      <div class="bg-cardbg border border-amber-500/40 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl">
+        <div class="w-16 h-16 bg-amber-500/20 text-amber-400 text-3xl rounded-full flex items-center justify-center mx-auto">
+          ✓
+        </div>
+        <h3 class="text-xl font-bold text-white">¡Datos Recibidos!</h3>
+        <p class="text-sm text-slate-300">
+          Ahora solo abre WhatsApp para enviarnos tu <strong>Logo</strong> y 3 capturas de cómo te piden turnos hoy.
+        </p>
+        <a id="waRedirectBtn" href="#"
+          class="block w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition">
+          Abrir WhatsApp Ahora 💬
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const form = document.getElementById('onboardingForm');
+    const modal = document.getElementById('successModal');
+    const waBtn = document.getElementById('waRedirectBtn');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Guardando información...';
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      data.rec24h = form.rec24h.checked;
+      data.rec2h = form.rec2h.checked;
+
+      try {
+        const res = await fetch('/api/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        // Enlace WhatsApp con mensaje precargado
+        const waPhone = '56974918866';
+        const msg = encodeURIComponent(`¡Hola! Ya completé el formulario de Spike Barber (Dueño: ${data.duenoNombre}). A continuación te adjunto el logo de la barbería y las capturas.`);
+        const waUrl = `https://wa.me/${waPhone}?text=${msg}`;
+
+        waBtn.href = waUrl;
+        modal.classList.remove('hidden');
+
+        // Redirigir automáticamente tras 1.5 segundos
+        setTimeout(() => {
+          window.location.href = waUrl;
+        }, 1500);
+
+      } catch (err) {
+        alert('Hubo un error al guardar los datos. Por favor inténtalo de nuevo.');
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Finalizar y Enviar Logo por WhatsApp 📲';
+      }
+    });
+  </script>
+</body>
+</html>
